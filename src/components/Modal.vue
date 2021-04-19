@@ -1,18 +1,18 @@
 <template>
   <div class="backdrop" @click="closeModal">
     <div class="modal" :class="{dark: theme === 'dark'}">
-       <h1>{{header}}</h1>
-       <p>{{text}}</p>
+      <slot>default content</slot>
+      <div class="actions">
+        <slot name="links"> </slot>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-
+ 
 export default { 
-  props: [ 
-    'header',
-    'text', 
+  props: [  
     'theme'
   ],
   methods: {
