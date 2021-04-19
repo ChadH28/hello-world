@@ -1,16 +1,19 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"><img> -->
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+
   <h1>{{title}}</h1>
   <input type="text" ref="name">
   <button @click="handleClick">click me</button>
   <p id="empty">
+    <Modal/>
 
   </p>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue';
+import Modal from './components/Modal.vue';
 
 export default {
   name: 'App',
@@ -20,7 +23,7 @@ export default {
     }
   },
   components: {
-    
+    Modal
   },
   methods: {
     handleClick() {
