@@ -6,7 +6,7 @@
   <button @click="handleClick">click me</button>
   <p id="empty"></p>
   <!-- div to disply modal -->
-  <div v-if="showModal">
+  <teleport to=".modals" v-if="showModal">
     <!-- modal -->
     <Modal :header="header" :text="text" theme="dark" @close="toggleModal">
       <H1>Giveaway</H1>
@@ -17,16 +17,16 @@
       <a href="#">sign up</a>
       <a href="#">slow down</a>
     </template>
-  </div>
+  </teleport>
 
-  <!-- div to disply modal2 -->
-  <div v-if="showModal2">
+  <!-- teleport to disply modal2 -->
+  <teleport to=".modals" v-if="showModal2">
     <!-- modal2 -->
     <Modal :header="header" :text="text" @close="toggleModal2">
       <H1>Sign to Newsletter</H1>
       <p>For updates and promo codes</p>
     </Modal>
-  </div>
+  </teleport>
 
   <button @click.right="toggleModal">open Giveaway</button>
   <button @click.right="toggleModal2">open Newsletter</button>
