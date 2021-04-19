@@ -2,6 +2,11 @@
   <!-- <img alt="Vue logo" src="./assets/logo.png"><img> -->
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   <h1>{{title}}</h1>
+  <input type="text" ref="name">
+  <button @click="handleClick">click me</button>
+  <p id="empty">
+
+  </p>
 </template>
 
 <script>
@@ -16,6 +21,14 @@ export default {
   },
   components: {
     
+  },
+  methods: {
+    handleClick() {
+      document.getElementById('empty').innerHTML = this.$refs.name;
+      this.$refs.name.classList.add('active')
+      this.$refs.name.focus();
+      this.title.classList.add('active')
+    }
   }
 }
 </script>
@@ -34,5 +47,9 @@ export default {
     border-bottom: 1px solid black;
     padding-bottom: 10px;
 
+  }
+
+  .active {
+    color: red;
   }
 </style>
